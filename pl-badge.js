@@ -5,6 +5,9 @@ class PlBadge extends PlElement {
 		return {
 			pulse: {
 				type: Boolean, reflectToAttribute: true
+			},
+			hidden: {
+				type: Boolean, reflectToAttribute: true
 			}
 		}
 	}
@@ -12,24 +15,31 @@ class PlBadge extends PlElement {
 	static get css() {
 		return css`
            :host {
-                display: inline-flex;
 				align-items: center;
+				display: flex;
+				font-size: 12px;
+				justify-content: center;
+				line-height: 14px;
+				user-select: none;
+            }
+
+			:host([hidden]) {
+				display: none;
+			}
+
+			span {
+				height: 16px;
 				background-color: var(--primary-base);
 				box-sizing: border-box;
 				border-radius:4px;
-				color: rgb(255, 255, 255);
-				display: flex;
-				font-size: 12px;
-				font-weight: 500;
-				height: 18px;
-				justify-content: center;
-				line-height: 12px;
-				padding: 3px 6px;
-				user-select: none;
+				color: #ffffff;
+				padding: 0 4px;
 				white-space: nowrap;
-            }
+				display: flex;
+				align-items: center;
+			}
 
-			:host([pulse]) {
+			:host([pulse]) span {
 				animation: pulse 1.5s infinite;
 			}
 
