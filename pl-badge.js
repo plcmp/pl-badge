@@ -17,9 +17,8 @@ class PlBadge extends PlElement {
            :host {
 				align-items: center;
 				display: flex;
-				font-size: 12px;
+				font: var(--text-font);
 				justify-content: center;
-				line-height: 14px;
 				user-select: none;
             }
 
@@ -28,12 +27,12 @@ class PlBadge extends PlElement {
 			}
 
 			span {
-				height: 16px;
+				height: var(--base-size-xxs);
 				background-color: var(--primary-base);
 				box-sizing: border-box;
-				border-radius:4px;
+				border-radius: var(--border-radius);
 				color: #ffffff;
-				padding: 0 4px;
+				padding: 0 var(--space-xs);
 				white-space: nowrap;
 				display: flex;
 				align-items: center;
